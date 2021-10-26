@@ -1,0 +1,34 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="vacancy-description">
+    <div class="title">
+        <h2>{{ object.title }}</h2>
+        <span class="salary">{{ object.salary_from }} - {{ object.salary_to }} Р</span>
+    </div>
+    <ul class="tags">
+        {% for skill in vacancy.get_skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <div class="description">
+    {{ object.description|safe }}
+    </div>
+    <form class="contact-us">
+        <h3>Отозваться на вакансию</h3>
+        <div class="form-item">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name">
+        </div>
+        <div class="form-item">
+            <label for="phone">Ваше телефон:</label>
+            <input type="phone" id="phone">
+        </div>
+        <div class="form-item">
+            <label for="text">Сопроводительное письмо:</label>
+            <textarea type="textarea" id="text" rows="4"></textarea>
+        </div>
+        <button>Записаться на сопроводительнй урок</button>
+    </form>
+</div>
+{% endblock  %}

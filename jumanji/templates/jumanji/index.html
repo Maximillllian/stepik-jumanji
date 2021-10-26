@@ -1,0 +1,67 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="search">
+        <h1>Вакансии для<br>Junior-разработчиков</h1>
+        <form action="">
+            <input type="text" placeholder="Найти работу или стажиорвку" />
+            <button>Найти</button>
+        </form>
+        <div class="examples">
+            <div>Например:</div>
+            <ul>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>Django</li>
+                <li>Парсинг</li>
+                <li>ML</li>
+            </ul>
+        </div>
+    </section>
+    <section class="vacancies">
+        <h2>Вакансии по рубрикам</h2>
+        <div class="spheres-cards">
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+            <div class="card">
+                <img src="{% static 'img/80x80.png' %}" alt="">
+                <div class="sphere">Бэкенд</div>
+                <div class="count">5 вакансий</div>
+            </div>
+        </div>
+    </section>
+{% endblock  %}

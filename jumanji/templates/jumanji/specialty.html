@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+
+{% block content %}
+<section class="specialty-head">
+    <h1>{{ title }}</h1>
+    <p>{{ vacancies_count }} вакансий</p>
+</section>
+{% include './block/vacancies-cards.html' with vacancies=object_list %}
+{% endblock  %}

@@ -1,0 +1,343 @@
+:root {
+    --background: #fffffe;
+    --secondBackground: #f2f4f6;
+    --darkBackground: #001534;
+
+    --headline: #00214d;
+    --paragraph: #1b2d45;
+    --darkParagraph: #b7c9e4;
+
+    --red: #ff5470;
+    --yellow: #fde24f;
+    --skyBlue: #00ebc7;
+}
+
+/* Generals */
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+p {
+    font-size: 1.5rem;
+    color: var(--paragraph);
+}
+
+a {
+    text-decoration: none;
+    color: var(--headline);
+}
+a:hover {
+    color: var(--red);
+}
+
+input, textarea {
+    outline: none;
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+input:focus, textarea:focus {
+    border: 1px solid var(--skyBlue);
+}
+
+button {
+    background-color: var(--secondBackground);
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+    padding: 5px 8px;
+    color: var(--headline);
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--darkParagraph);
+}
+
+section {
+    margin: 5rem 0;
+}
+
+ul.tags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    margin: 0;
+    margin-bottom: .5rem;
+    padding: 0;
+}
+
+ul.tags li {
+    position: relative;
+}
+
+ul.tags li:not(:last-child) {
+    margin-right: 1rem;
+}
+ul.tags li:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: -.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: .25rem;
+    height: .25rem;
+    border-radius: 100%;
+    background: var(--headline);
+}
+
+/* Header */
+
+header {
+    background-color: var(--secondBackground);
+    padding: 1rem;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+header .logo:hover {
+    color: inherit;
+}
+
+/* Main */
+
+main {
+    background-color: var(--background);
+}
+
+/* Main Page */
+
+.search {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.search form {
+    display: flex;
+    gap: 20px;
+
+}
+
+.search form input {
+    flex: auto;
+    /* min-width: 70%; */
+}
+
+.search .examples {
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.search .examples ul {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: .5rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+.search .examples li {
+    list-style: none;
+    text-decoration: underline;
+}
+
+/* Vacancies */
+
+.spheres-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.spheres-cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 1.5rem 0;
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+}
+
+.spheres-cards .card .count {
+    color: var(--red);
+}
+
+/* Search page */
+
+.vacancies-search {
+    max-width: 400px;
+    margin: 0 auto; 
+}
+
+.vacancies-search form {
+    display: flex;
+    gap: 1rem;
+}
+
+.vacancies-search form input {
+    flex: auto;
+}
+
+.vacancies-search .count {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.vacancies-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+    max-width: 700px;
+    gap: 1.5rem;
+
+    margin: 3rem auto;
+}
+
+.vacancies-cards .card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+}
+
+.vacancies-cards .card h2 {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+.vacancies-cards .card .date {
+    margin-top: 2rem;
+    color: gray;
+}
+
+.vacancies-cards .card img {
+    object-fit: cover;
+    margin-left: auto;
+    max-height: 80px;
+    max-width: 130px;
+    /* width: 100%; */
+}
+
+/* Specialty Page */
+
+.specialty-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.specialty-head h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+/* Company Page */
+
+.company-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-head h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+/* Vacancy detail */
+
+.vacancy-description {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vacancy-description p {
+    font-size: 1rem;
+}
+
+.vacancy-description h2 {
+    margin: 0;
+    display: inline-block;
+}
+
+.vacancy-description .title {
+    margin: 1.5rem 0;
+}
+
+.vacancy-description .tags {
+    margin-bottom: 1.5rem;
+    color: gray;
+}
+
+form.contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--darkParagraph);
+}
+
+form.contact-us h3 {
+    margin: 0;
+    text-align: left;
+}
+
+form.contact-us .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+form.contact-us button {
+    width: auto;
+}

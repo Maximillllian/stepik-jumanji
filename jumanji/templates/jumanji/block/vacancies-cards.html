@@ -1,0 +1,17 @@
+<section class="vacancies-cards">
+    {% for vacancy in vacancies %}
+    <div class="card">
+        <div class="description">
+            <h2>{{ vacancy.title }}</h2>
+            <ul class="tags">
+                {% for skill in vacancy.get_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+            <div class="salary">От {{ vacancy.salary_from }} до {{ vacancy.salary_to }} руб.</div>
+            <div class="date">{{ vacancy.posted_at }}</div>
+        </div>
+        <img src="https://place-hold.it/130x80.png" alt="">
+    </div>
+    {% endfor %}
+</section>

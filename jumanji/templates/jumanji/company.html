@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+
+{% block content %}
+<section class="company-head">
+    <img src="{{ company.logo }}" alt="">
+    <h1>{{ company.title }}</h1>
+    <p>Компания, {{ object_list.count }} вакансий</p>
+</section>
+{% include './block/vacancies-cards.html' with vacancies=object_list %}
+{% endblock  %}
