@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
 from django.views import View
+from django.views.generic import ListView, DetailView
+from django.template import RequestContext
 
 from jumanji.models import Vacancy, Specialty, Company
 
@@ -69,4 +70,15 @@ class CompanyView(ListView):
     def get_template_names(self):
         template_name = 'jumanji/company.html'
         return template_name
-    
+
+
+def handler404(request, exception, template_name="404.html"):
+    response = render(template_name)
+    response.status_code = 404
+    return response
+
+
+def handler500(request, exception, template_name="500.html"):
+    response = render(template_name)
+    response.status_code = 500
+    return response
