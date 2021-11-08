@@ -1,0 +1,6 @@
+{% extends './template.html' %}
+
+{% block company-info %}
+    <h2>{{ object.title }}</h2>
+    {% include '../block/vacancy-form.html' %}
+{% endblock  %}

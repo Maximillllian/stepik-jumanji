@@ -1,11 +1,11 @@
-{% extends './base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
     <section class="vacancies-search">
         <h1>Поиск вакансий</h1>
-        <form>
-            <input type="text" placeholder="Backend" />
+        <form action="{% url 'search' %}">
+            <input type="text" name="s" placeholder="Backend" />
             <button>Найти вакансии</button>
         </form>
         <div class="count">Найдено 8 вакансий</div>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-wrapper">
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <form class="auth-form login" action="" method="post">
+        {% csrf_token %}
+        <div class="errors">
+            {% for field in form %}
+                {% for error in field.errors %}
+                <div class="error"><b>Ошибка!</b> {{ error }}</div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <h2 class="title"><b>Войти</b></h2>
+        <label class="username" for="username">Логин:</label>
+        {{ form.username }}
+        <label class="password" for="passsword">Пароль:</label>
+        {{ form.password }}
+        <button type="submit">Войти</button>
+        <div class="tip">Нет аккаунта? <a href="{% url 'registration' %}">Зарегистрируйтесь!</a></div>
+    </form>
+</div>
+{% endblock  %}

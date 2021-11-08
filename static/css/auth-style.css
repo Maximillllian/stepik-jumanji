@@ -1,0 +1,69 @@
+.errors {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.error {
+    padding: .5rem;
+    background-color: var(--secondBackground);
+    border: 1px solid var(--red); 
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+
+    margin-top: 4rem;
+}
+
+.auth-form button {
+    padding: .5rem;
+    background-color: var(--red);
+    color: var(--background);
+    border: none;
+    margin-top: 1rem;
+}
+
+.auth-form .tip {
+    align-self: center;
+}
+.auth-form .tip a {
+    color: var(--red);
+}
+
+.auth-form h2 {
+    grid-area: title;
+    margin: 0;
+}
+.auth-form label.username {
+    grid-area: name-label;
+}
+.auth-form label.password {
+    grid-area: password-label;
+}
+.auth-form #username {
+    grid-area: name-input;
+}
+.auth-form #password {
+    grid-area: password-input;
+}
+.auth-form .button {
+    justify-self: center;
+    grid-area: button;
+}

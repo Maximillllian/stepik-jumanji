@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="mycompany">
+    <aside class="card">
+        <h2>Моя компания</h2>
+        <nav>
+            <a href="{% url 'mycompany' %}">1. Информация о компании</a>
+            <a href="{% url 'mycompany-vacancies' %}">2. Вакансии</a>
+        </nav>
+    </aside>
+    <div class="card info">
+        {% block company-info %}
+        {% endblock  %}
+    </div>
+</section>
+{% endblock  %}

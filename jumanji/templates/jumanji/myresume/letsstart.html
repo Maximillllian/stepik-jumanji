@@ -1,0 +1,7 @@
+{% extends './myresume-template.html' %}
+
+{% block myresume-inner %}
+    <h2>Мое резюме</h2>
+    <div>У вас нет резюме. Хотите создать его?</div>
+    <a href="{% url 'create-resume' %}" class="btn primary">Создать резюме</a>
+{% endblock  %}

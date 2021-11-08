@@ -1,0 +1,30 @@
+<form class="vacancy" action="" method="post">
+    {% csrf_token %}
+    <div class="form-item title">
+        <label for="title">Название вакансии</label>
+        {{ form.title }}
+    </div>
+    <div class="form-item specialty">
+        <label for="specialty">Специализация</label>
+        {{ form.specialty }}
+    </div>
+    <div class="form-item salary_from">
+        <label for="salary_from">Зарплата от</label>
+        {{ form.salary_from }}
+    </div>
+    <div class="form-item salary_to">
+        <label for="salary_to">Зарплата до</label>
+        {{ form.salary_to }}
+    </div>
+    <div class="form-item skills">
+        <label for="skills">Требуемые навыки</label>
+        {{ form.skills }}
+    </div>
+    <div class="form-item description">
+        <label for="description">Описание</label>
+        {{ form.description }}  
+    </div>
+    <div class="form-item button">
+        <button class="primary" type="submit">Сохранить</button>
+    </div>
+</form>

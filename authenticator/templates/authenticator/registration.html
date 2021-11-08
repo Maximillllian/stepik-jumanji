@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-wrapper">
+    <form class="auth-form" action="" method="post">
+        {% csrf_token %}
+        <div class="errors">
+            {% for field in form %}
+                {% for error in field.errors %}
+                <div class="error"><b>Ошибка!</b> {{ error }}</div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <h2 class="title"><b>Регистрация</b></h2>
+        <label class="username" for="username">Логин:</label>
+        {{ form.username }}
+        <label for="first_name">Имя:</label>
+        {{ form.first_name }}
+        <label for="last_name">Фамилия:</label>
+        {{ form.last_name }}
+        <label class="password" for="passsword1">Пароль:</label>
+        {{ form.password1 }}
+        <label class="password" for="passsword2">Подтвердите пароль:</label>
+        {{ form.password2 }}
+        <button type="submit">Регистрация</button>
+    </form>
+</div>
+{% endblock  %}

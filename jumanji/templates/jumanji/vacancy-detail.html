@@ -1,4 +1,4 @@
-{% extends './base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <div class="vacancy-description">
@@ -14,21 +14,22 @@
     <div class="description">
     {{ object.description|safe }}
     </div>
-    <form class="contact-us">
+    <form class="contact-us" method="post">
+        {% csrf_token %}
         <h3>Отозваться на вакансию</h3>
         <div class="form-item">
             <label for="name">Ваше имя:</label>
-            <input type="text" id="name">
+            {{ form.name }}
         </div>
         <div class="form-item">
             <label for="phone">Ваше телефон:</label>
-            <input type="phone" id="phone">
+            {{ form.phone }}
         </div>
         <div class="form-item">
             <label for="text">Сопроводительное письмо:</label>
-            <textarea type="textarea" id="text" rows="4"></textarea>
+            {{ form.message}}
         </div>
-        <button>Записаться на сопроводительнй урок</button>
+        <button type="submit">Записаться на сопроводительнй урок</button>
     </form>
 </div>
 {% endblock  %}

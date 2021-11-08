@@ -1,0 +1,27 @@
+{% load static %}
+
+<header>
+    <div class="container">
+        <div class="header__inner">
+            <nav>
+                <a class="logo" href="/#">Джуманджи</a>
+                <a href="{% url 'all_vacancies' %}">Вакансии</a>
+            </nav>
+            <div class="user">
+            {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <strong>{{ user.first_name }} {{ user.last_name }}</strong>
+                    <nav>
+                        <a href="">Профиль</a>
+                        <a href="{% url 'myresume' %}">Резюме</a>
+                        <a href="{% url 'mycompany' %}">Компания</a>
+                        <a href="{% url 'logout' %}">Выйти</a>
+                    </nav>
+                </div>
+            {% else %}
+                <a href="{% url 'login' %}" class="login">Вход</a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

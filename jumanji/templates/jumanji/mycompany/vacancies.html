@@ -1,0 +1,26 @@
+{% extends './template.html' %}
+
+{% block company-info %}
+    <h2>Вакансии</h2>
+    {% if has_vacancies %}
+    <div class="vacancies">
+        {% for vacancy in object_list %}
+        <div class="card">
+            <div class="description">
+                <h3 class="primary"><a href="{% url 'vacancy_detail' vacancy.id %}">{{ vacancy.title }}</a></h3>
+                <footer>
+                    <div class="salary">{{ vacancy.salary_from }}  </div>
+                    <div class="applications"><small>{{ vacancy.applications.count }} откликов</small></div>
+                </footer>
+            </div>
+            <a href="{% url 'update_vacancy' vacancy.id %}" class="btn primary">Изменить</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="warning card">
+        У вас пока нет вакансий, создайте новую!
+    </div>
+    <a href="{% url 'create_vacancy' %}" class="btn primary">Добавить вакансию</a>
+    {% endif %}
+{% endblock  %}

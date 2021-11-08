@@ -1,0 +1,26 @@
+<form class="company" action="" method="post">
+    {% csrf_token %}
+    <div class="form-item title">
+        <label for="title">Название компании</label>
+        {{ form.title }}
+    </div>
+    <div class="form-item logo">
+        <label for="logo">Логотип</label>
+        {{ form.logo }}
+    </div>
+    <div class="form-item employees">
+        <label for="employee_count">Количество человек в компании</label>
+        {{ form.employee_count }}
+    </div>
+    <div class="form-item location">
+        <label for="location">География</label>
+        {{ form.location }}
+    </div>
+    <div class="form-item description">
+        <label for="description">Описание компании</label>
+        {{ form.description }}
+    </div>
+    <div class="form-item button">
+        <button class="primary" type="submit">Сохранить</button>
+    </div>
+</form>

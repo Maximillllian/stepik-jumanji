@@ -1,12 +1,14 @@
-{% extends './base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
     <section class="search">
         <h1>Вакансии для<br>Junior-разработчиков</h1>
-        <form action="">
-            <input type="text" placeholder="Найти работу или стажиорвку" />
-            <button>Найти</button>
+        <form action="{% url 'search' %}">
+            <input type="text" name="s" placeholder="Найти работу или стажиорвку" />
+            <div class="form-input">
+                <button>Найти</button>
+            </div>
         </form>
         <div class="examples">
             <div>Например:</div>
@@ -22,46 +24,13 @@
     <section class="vacancies">
         <h2>Вакансии по рубрикам</h2>
         <div class="spheres-cards">
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
-            <div class="card">
-                <img src="{% static 'img/80x80.png' %}" alt="">
-                <div class="sphere">Бэкенд</div>
-                <div class="count">5 вакансий</div>
-            </div>
+        {% for specialty in object_list %}
+            <a class="card" href="{% url 'specialty_vacancies' specialty.code %}">
+                <img src="{% get_media_prefix %}{{ specialty.picture }}" alt="">
+                <div class="sphere">{{ specialty.title }}</div>
+                <div class="count">{{ specialty.vacancies.count }} вакансий</div>
+            </a>
+        {% endfor %}
         </div>
     </section>
 {% endblock  %}

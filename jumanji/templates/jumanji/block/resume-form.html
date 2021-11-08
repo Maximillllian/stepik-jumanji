@@ -1,0 +1,42 @@
+<form action="" method="post" class="resume">
+    {% csrf_token %}
+    <div class="form-item name">
+        <label for="name">Имя</label>
+        {{ form.name }}
+    </div>
+    <div class="form-item surname">
+        <label for="surname">Фамилия</label>
+        {{ form.surname }}
+    </div>
+    <div class="form-item status">
+        <label for="status">Готовность к работе</label>
+        {{ form.status }}
+    </div>
+    <div class="form-item salary">
+        <label for="salary">Ожидаемое вознаграждение</label>
+        {{ form.salary }}
+    </div>
+    <div class="form-item specialty">
+        <label for="specialty">Специализация</label>
+        {{ form.specialty }}
+    </div>
+    <div class="form-item grade">
+        <label for="grade">Квалификация</label>
+        {{ form.grade }}
+    </div>
+    <div class="form-item education">
+        <label for="education">Образование</label>
+        {{ form.education }}
+    </div>
+    <div class="form-item experience">
+        <label for="experience">Опыт работы</label>
+        {{ form.experience }}
+    </div>
+    <div class="form-item portfolio">
+        <label for="portfolio">Портфолио</label>
+        {{ form.portfolio }}
+    </div>
+    <div class="form-item button">
+        <button type="submit">Сохранить</button>
+    </div>
+</form>
