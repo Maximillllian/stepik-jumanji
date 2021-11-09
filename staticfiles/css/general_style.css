@@ -1,0 +1,297 @@
+:root {
+    --background: #fffffe;
+    --secondBackground: #f2f4f6;
+    --darkBackground: #001534;
+
+    --headline: #00214d;
+    --paragraph: #1b2d45;
+    --darkParagraph: #b7c9e4;
+
+    --red: #ff5470;
+    --lightRed: rgba(255, 84, 112, .2);
+    --yellow: #fde24f;
+    --skyBlue: #00ebc7;
+}
+
+/* Generals */
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1.primary, h2.primary, h3.primary {
+    color: var(--red);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    color: var(--paragraph);
+}
+
+a {
+    text-decoration: none;
+    color: var(--headline);
+}
+a:hover {
+    color: var(--red);
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+input, textarea, select {
+    outline: none;
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+input:focus, textarea:focus, select:focus {
+    border: 1px solid var(--skyBlue);
+}
+
+.btn, button {
+    background-color: var(--secondBackground);
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+    padding: 5px 8px;
+    color: var(--headline);
+    cursor: pointer;
+}
+.btn:hover, button:hover {
+    background-color: var(--darkParagraph);
+}
+
+.btn.primary, button.primary {
+    background-color: var(--red);
+    color: var(--background);
+    border-color: var(--red);
+}
+
+a.btn.primary {
+    padding: .5rem .75rem;
+}
+
+section {
+    margin: 5rem 0;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+}
+.card.warning {
+    background-color: var(--lightRed);
+    color: var(--red);
+    border-color: var(--lightRed);
+}
+a.card {    
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+a.card:hover {
+    color: inherit;
+    border: 1px solid var(--red);
+}
+
+ul.tags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    margin: 0;
+    margin-bottom: .5rem;
+    padding: 0;
+}
+
+ul.tags li {
+    position: relative;
+}
+
+ul.tags li:not(:last-child) {
+    margin-right: 1rem;
+}
+ul.tags li:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: -.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: .25rem;
+    height: .25rem;
+    border-radius: 100%;
+    background: var(--headline);
+}
+
+/* Form Grid */
+
+form .title {
+    grid-area: title;
+}
+form .logo {
+    grid-area: logo;
+}
+form .employees {
+    grid-area: employees;
+}
+form .location {
+    grid-area: location;
+}
+form .description {
+    grid-area: description;
+}
+form .specialty {
+    grid-area: specialty;
+}
+form .salary_from {
+    grid-area: salary_from;
+}
+form .salary_to {
+    grid-area: salary_to;
+}
+form .skills {
+    grid-area: skills;
+}
+form .name {
+    grid-area: name;
+}
+form .surname {
+    grid-area: surname;
+}
+form .status {
+    grid-area: status;
+}
+form .salary {
+    grid-area: salary;
+}
+form .grade {
+    grid-area: grade;
+}
+form .education {
+    grid-area: education;
+}
+form .experience {
+    grid-area: experience;
+}
+form .portfolio {
+    grid-area: portfolio;
+}
+form .button {
+    grid-area: button;
+}
+
+/* Header */
+
+header {
+    background-color: var(--secondBackground);
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+header .logo:hover {
+    color: inherit;
+}
+
+header .user {
+    /* position: relative; */
+}
+
+header .user-menu {
+    position: relative;
+    cursor: pointer;
+    padding-right: 10px;
+}
+header .user-menu:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: var(--paragraph) transparent transparent transparent;
+}
+
+header .user-menu nav {
+    display: none;
+    position: absolute;
+    /* left: -50%; */
+    right: -10px;
+    top: 250%;
+    padding: 1rem;
+    
+    background-color: var(--secondBackground);
+    border: 1px solid var(--darkParagraph);
+    border-radius: 5px;
+}
+header .user-menu nav.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main */
+
+main {
+    background-color: var(--background);
+    flex: auto;
+}
